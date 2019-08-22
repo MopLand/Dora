@@ -32,14 +32,8 @@
         }
     },
     "autoload": {
-		"files": [
-			"modules/Master/helpers.php"
-		],
         "psr-4": {
-            "App\\": "app/",            
-            "Base\\": "modules/Base/",
-            "Admin\\": "modules/Admin/",
-            "Master\\": "modules/Master/"
+            "App\\": "app/"
         },
         "classmap": [
             "database/seeds",

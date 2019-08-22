@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -39,8 +39,8 @@ class IndexController extends Controller
 
 		//var_dump( app_path().'/../modules/Frontend/Views/' );
 
-		$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Admin/Views/'));
-		View::setFinder($finder);
+		//$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Admin/Views/'));
+		//View::setFinder($finder);
 
         //$this->middleware('guest')->except('logout');
 	}
@@ -77,7 +77,7 @@ class IndexController extends Controller
 		//Config::set('view.paths', array(__DIR__.'/../Frontend/Views'));
 
 		//View::setPath(base_path().'/modules/Frontend/views');
-		return view('index/test');
+		return view('admin/index/test');
 	}
 
 }

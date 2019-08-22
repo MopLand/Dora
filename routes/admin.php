@@ -11,13 +11,17 @@
 |
 */
 
-Route::domain('admin.myapp.test')->group(function () {
+//Route::prefix('/')->namespace('Admin')->group(function () {
+
+//Route::domain('admin.myapp.test')->namespace('Admin')->group(function () {
 
 	//var_dump('xxfffx');
 	//exit;
 
 	Route::get('/', 'IndexController@index');
 
+	Route::get('/test', 'IndexController@test');
+
 	Route::get('/auth/login', 'AuthController@login');
 	
-});
+//});

@@ -14,7 +14,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+	protected $namespace = 'App\Http\Controllers';
+	protected $homeNamespace = 'App\Http\Controllers\Master';//前台
+    protected $adminNamespace = 'App\Http\Controllers\Admin';//后台
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -35,9 +37,18 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        //$this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+		//$this->mapWebRoutes();
+		
+		$sld_prefix = explode('.',$_SERVER['HTTP_HOST'])[0];
+        if(config('route.admin_url') == $sld_prefix){
+            $this->mapAdminRoutes();
+        }elseif(config('route.master_url') == $sld_prefix){
+            $this->mapHomeRoutes();
+        }elseif(config('route.api_url') == $sld_prefix){
+            $this->mapApiRoutes();
+        }
 
         //
     }
@@ -69,5 +80,26 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+	}
+	
+	/**
+     * 管理后台
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->adminNamespace)
+            ->group(base_path('routes/admin.php'));
     }
+ 
+    /**
+     * PC端
+     */
+    protected function mapMasterRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->homeNamespace)
+            ->group(base_path('routes/master.php'));
+	}
+	
 }

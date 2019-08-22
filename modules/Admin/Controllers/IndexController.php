@@ -1,6 +1,6 @@
 <?php
 
-namespace Master\Controllers\Index;
+namespace Admin\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -55,9 +55,9 @@ class IndexController extends Controller
 
 		$this->init();
 
-		var_dump( 'xxxx' );
+		//var_dump( 'xxxx' );
 
-		var_dump( app_path().'/../modules/Frontend/Views/' );
+		//var_dump( app_path().'/../modules/Frontend/Views/' );
 
 		//$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Frontend/Views/'));
 		//View::setFinder($finder);
@@ -71,13 +71,13 @@ class IndexController extends Controller
 	
 	public function test( ){
 		//var_dump( $request );
-		var_dump( resource_path('views') );
-		var_dump( module_path('views') );
-		var_dump( base_path() );
+		//var_dump( resource_path('views') );
+		//var_dump( module_path('views') );
+		//var_dump( base_path() );
 		//Config::set('view.paths', array(__DIR__.'/../Frontend/Views'));
 
 		//View::setPath(base_path().'/modules/Frontend/views');
-		return view('test');
+		return view('index/test');
 	}
 
 }

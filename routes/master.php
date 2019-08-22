@@ -15,7 +15,7 @@
 
 //var_dump( Config::get('view.paths') );
 
-Route::domain('admin.myapp.test')->group(function () {
+Route::domain('www.myapp.test')->group(function () {
 
 	//var_dump('xxfffx');
 	//exit;

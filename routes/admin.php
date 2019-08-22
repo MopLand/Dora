@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/backend', function () {
-    return '这是后台模块';
+Route::domain('admin.myapp.test')->group(function () {
+
+	//var_dump('xxfffx');
+	//exit;
+
+	Route::get('/', 'IndexController@index');
+
+	Route::get('/auth/login', 'AuthController@login');
+	
 });

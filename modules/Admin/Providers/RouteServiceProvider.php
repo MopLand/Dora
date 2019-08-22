@@ -1,6 +1,6 @@
 <?php
 
-namespace Frontend\Providers;
+namespace Admin\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Frontend\Controllers';
+    protected $namespace = 'Admin\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -35,6 +35,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        Route::namespace($this->namespace)->group(base_path('routes/frontend.php'));
+        Route::namespace($this->namespace)->group(base_path('routes/backend.php'));
     }
 }

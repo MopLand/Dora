@@ -33,13 +33,13 @@
     },
     "autoload": {
 		"files": [
-			"modules/Frontend/helpers.php"
+			"modules/Master/helpers.php"
 		],
         "psr-4": {
             "App\\": "app/",            
             "Base\\": "modules/Base/",
-            "Backend\\": "modules/Backend/",
-            "Frontend\\": "modules/Frontend/"
+            "Admin\\": "modules/Admin/",
+            "Master\\": "modules/Master/"
         },
         "classmap": [
             "database/seeds",

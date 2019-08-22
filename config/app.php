@@ -176,9 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // 模块化的Provider
-        Base\Providers\BaseServiceProvider::class, //公共基本服务Provider
-        Backend\Providers\BaseServiceProvider::class, //后台服务Provider
-        Frontend\Providers\BaseServiceProvider::class, //前台基本服务Provider
+        //Base\Providers\BaseServiceProvider::class, //公共基本服务Provider
+        Admin\Providers\BaseServiceProvider::class, //后台服务Provider
+        Master\Providers\BaseServiceProvider::class, //前台基本服务Provider
 
     ],
 

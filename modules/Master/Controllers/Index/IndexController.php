@@ -1,6 +1,6 @@
 <?php
 
-namespace Frontend\Controllers\Index;
+namespace Master\Controllers\Index;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -39,7 +39,7 @@ class IndexController extends Controller
 
 		//var_dump( app_path().'/../modules/Frontend/Views/' );
 
-		$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Frontend/Views/'));
+		$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Master/Views/'));
 		View::setFinder($finder);
 
         //$this->middleware('guest')->except('logout');

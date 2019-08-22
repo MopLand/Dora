@@ -35,6 +35,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        Route::namespace($this->namespace)->group(base_path('routes/backend.php'));
+        Route::namespace($this->namespace)->group(base_path('routes/admin.php'));
     }
 }

@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::domain('www.myapp.test')->group(function () {
+
+	Route::get('/', function () {
+		return view('welcome');
+	});
+
 });

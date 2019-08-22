@@ -15,13 +15,18 @@
 
 //var_dump( Config::get('view.paths') );
 
-$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Frontend/Views/'));
-View::setFinder($finder);
+Route::domain('admin.myapp.test')->group(function () {
 
-Route::get('/frontend', function () {
-    return '这是前台模块';
+	//var_dump('xxfffx');
+	//exit;
+
+	Route::get('/', function () {
+		return '这是前台模块';
+	});
+
+	Route::get('/index', 'Index\IndexController@index');
+
+	Route::get('/test', 'Index\IndexController@test');
+	
 });
 
-Route::get('/frontend/index', 'Index\IndexController@index');
-
-Route::get('/frontend/test', 'Index\IndexController@test');

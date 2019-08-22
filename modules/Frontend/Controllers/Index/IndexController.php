@@ -28,7 +28,22 @@ class IndexController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/home';
+	//protected $redirectTo = '/home';
+	
+	
+
+	public function init()
+    {
+
+		//var_dump( 'xxxx' );
+
+		//var_dump( app_path().'/../modules/Frontend/Views/' );
+
+		$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Frontend/Views/'));
+		View::setFinder($finder);
+
+        //$this->middleware('guest')->except('logout');
+	}
 
     /**
      * Create a new controller instance.
@@ -38,9 +53,14 @@ class IndexController extends Controller
     public function __construct()
     {
 
+		$this->init();
+
 		var_dump( 'xxxx' );
 
 		var_dump( app_path().'/../modules/Frontend/Views/' );
+
+		//$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Frontend/Views/'));
+		//View::setFinder($finder);
 
         //$this->middleware('guest')->except('logout');
 	}

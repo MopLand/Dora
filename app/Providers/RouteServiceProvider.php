@@ -45,7 +45,7 @@ class RouteServiceProvider extends ServiceProvider
         if(config('route.admin_url') == $sld_prefix){
             $this->mapAdminRoutes();
         }elseif(config('route.master_url') == $sld_prefix){
-            $this->mapHomeRoutes();
+            $this->mapMasterRoutes();
         }elseif(config('route.api_url') == $sld_prefix){
             $this->mapApiRoutes();
         }

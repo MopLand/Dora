@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Config\Repository;
 
-class IndexController extends BaseController
+class BaseController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -29,20 +29,35 @@ class IndexController extends BaseController
      * @var string
      */
 	//protected $redirectTo = '/home';	
-	
-	public function index(){		
-		return 'index';
-	}
-	
-	public function test( ){
-		//var_dump( $request );
-		//var_dump( resource_path('views') );
-		//var_dump( module_path('views') );
-		//var_dump( base_path() );
-		//Config::set('view.paths', array(__DIR__.'/../Frontend/Views'));
 
-		//View::setPath(base_path().'/modules/Frontend/views');
-		return view('admin/index/test');
+	public function init()
+    {
+
+		//$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Admin/Views/'));
+		//View::setFinder($finder);
+
+		//echo 'xxx';
+
+	}
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+		$this->init();
+
+		//var_dump( 'xxxx' );
+
+		//var_dump( app_path().'/../modules/Frontend/Views/' );
+
+		//$finder = new \Illuminate\View\FileViewFinder(app()['files'], array(app_path().'/../modules/Frontend/Views/'));
+		//View::setFinder($finder);
+
+        //$this->middleware('guest')->except('logout');
 	}
 
 }
